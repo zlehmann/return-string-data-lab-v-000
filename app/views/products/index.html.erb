@@ -6,5 +6,11 @@
     <th>Price</th>
     <th>Description</th>
   </tr>
-  <%= render(@products) || "No Products" %>
+  <% @products.each do |product| %>
+    <tr>
+      <td><%= product.name %></td>
+      <td><%= product.price %></td>
+      <td><%= truncate product.description %></td>
+    </tr>
+  <% end %>
 </table>
