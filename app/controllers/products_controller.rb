@@ -15,7 +15,7 @@ class ProductsController < ApplicationController
     @product.description = params[:description]
     @product.inventory = params[:inventory]
     @product.save
-    redirect_to product_path(@product)
+    redirect_to products_path
   end
 
 end
