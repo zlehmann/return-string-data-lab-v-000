@@ -9,7 +9,7 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.new
+    @product = Product.last
     @product.name = params[:name]
     @product.price = params[:price]
     @product.description = params[:description]
