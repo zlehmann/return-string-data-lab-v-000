@@ -4,9 +4,18 @@ class ProductsController < ApplicationController
     @products = Product.all
   end
 
+  def new
+    @product = Product.new
+  end
+
   def create
     @product = Product.new
-
+    @product.name = params[:name]
+    @product.price = params[:price]
+    @product.description = params[:description]
+    @product.inventory = params[:inventory]
+    @product.save
+    redirect_to product_path(@product)
   end
 
 end
