@@ -10,7 +10,18 @@
     <tr>
       <td><%= product.name %></td>
       <td><%= product.price %></td>
-      <td><%= truncate product.description %><button class="js-more" data-id="<%= product.id %>">More Info</button></td>
+      <td id="body-<%= product.id %>"><%= truncate product.description %><button class="js-more" data-id="<%= product.id %>">More Info</button></td>
     </tr>
   <% end %>
 </table>
+
+<script type="text/javascript" charset="utf-8">
+$(function() {
+  $(".js-more").on('click', function() {
+    let id = $(this).data("id");
+    $.get("/products/" + id + "/body", function(data) {
+      $("#body-" + id).text(data);
+    });
+  });
+});
+</script>
