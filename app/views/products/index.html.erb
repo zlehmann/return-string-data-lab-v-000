@@ -21,17 +21,16 @@
 $(function() {
   $(".js-more").on('click', function() {
     let id = $(this).data("id");
-    debugger
     $.get("/products/" + id + "/description", function(data) {
       $("#body-" + id).text(data);
     });
-    debugger
-    inv_test = $.get("/products/" + id + "/inventory")
-    if (inv_test.responseText === "true") {
-      $("#inv-" + id).text("Available");
-    } else {
-      $("#inv-" + id).text("Sold Out");
-    };
+    $.get("/products/" + id + "/inventory", function(data) {
+      if (data === "true") {
+        $("#inv-" + id).text("Available");
+      } else {
+        $("#inv-" + id).text("Sold Out");
+      };
+    });
   });
 });
 </script>
