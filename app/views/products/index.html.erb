@@ -26,10 +26,10 @@ $(function() {
     });
     inv_test = $.get("/products/" + id + "/inventory")
     if (inv_test === true) {
-        $("#inv-" + id).text("Available");
+      $("#inv-" + id).text("Available");
     } else {
       $("#inv-" + id).text("Sold Out");
-    };);
+    });
   });
 });
 </script>
