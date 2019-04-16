@@ -10,7 +10,7 @@
     <tr>
       <td><%= product.name %></td>
       <td><%= product.price %></td>
-      <td><%= truncate product.description %></td>
+      <td><%= truncate product.description %><button class="js-more" data-id="<%= product.id %>">More Info</button></td>
     </tr>
   <% end %>
 </table>
