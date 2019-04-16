@@ -9,7 +9,6 @@ class ProductsController < ApplicationController
   end
 
   def create
-    debugger
     @product = Product.last
     @product.name = params[:product][:name]
     @product.price = params[:product][:price]
