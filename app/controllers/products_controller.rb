@@ -11,10 +11,10 @@ class ProductsController < ApplicationController
   def create
     debugger
     @product = Product.last
-    @product.name = params[:name]
-    @product.price = params[:price]
-    @product.description = params[:description]
-    @product.inventory = params[:inventory]
+    @product.name = params[:product][:name]
+    @product.price = params[:product][:price]
+    @product.description = params[:product][:description]
+    @product.inventory = params[:product][:inventory]
     @product.save
     redirect_to products_path
   end
