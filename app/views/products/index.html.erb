@@ -25,7 +25,7 @@ $(function() {
       $("#body-" + id).text(data);
     });
     inv_test = $.get("/products/" + id + "/inventory")
-    if (inv_test === true) {
+    if (inv_test.responseText === true) {
       $("#inv-" + id).text("Available");
     } else {
       $("#inv-" + id).text("Sold Out");
